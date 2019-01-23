@@ -5,17 +5,19 @@ docker exec -i --user postgres leaderboard_db_1 createdb leaderboard
 docker exec -i --user postgres leaderboard_db_1 psql leaderboard -a  <<__END
 
 create user leaderboard_role password 'PG_PASSWORD=leaderboard';
+__END
 
 docker exec -i leaderboard_db_1 psql -Uleaderboard_role leaderboard -a <<__END
-drop table if exists auths;
-drop table if exists loginsessions;
-drop table if exists Referees;
-drop table if exists Subscribers;
-drop table if exists Competitions;
+
+drop table if exists Leaderboards;
 drop table if exists Games;
 drop table if exists Players;
+drop table if exists Users;
+drop table if exists loginsessions;
+drop table if exists Subscribers;
+drop table if exists Competitions;
 drop table if exists Rounds;
-drop table if exists Leaderboards;
+drop table if exists auths;
 
 CREATE TABLE auths (
     id serial primary key,
@@ -26,26 +28,26 @@ CREATE TABLE auths (
     constraint auth_group UNIQUE  (email)
 );
 
-
-CREATE TABLE loginsessions (
-    id serial primary key,
-    "secretKey" TEXT NOT NULL,
-    "userId" integer NOT NULL references users(id),
-    "createdAt" TIMESTAMP with time zone,
-    "updatedAt" TIMESTAMP with time zone,
-    "expiryTime" INTEGER
-);
-
-CREATE TABLE Referees (
+CREATE TABLE Users (
     id serial primary key,
     "authId" integer NOT NULL references auths(id),
-    
     "profileName" TEXT NOT NULL,
     "profilePic" TEXT,
     "createdAt" TIMESTAMP with time zone,
     "updatedAt" TIMESTAMP with time zone,
     deleted boolean DEFAULT FALSE
 );
+
+CREATE TABLE loginsessions (
+    id serial primary key,
+    "secretKey" TEXT NOT NULL,
+    "userId" integer NOT NULL references Users(id),
+    "createdAt" TIMESTAMP with time zone,
+    "updatedAt" TIMESTAMP with time zone,
+    "expiryTime" INTEGER
+);
+
+
 
 CREATE TABLE Subscribers (
     id serial primary key,    
