@@ -111,4 +111,10 @@ CREATE TABLE Leaderboards (
     deleted boolean DEFAULT FALSE
 );
 
+insert into competitions ("competitionName") values ('au open');
+insert into games ("gameName", "competitionId") values ('Federer v/s Murray', 1);
+insert into players ("gameId", "profileName") values (1, 'Roger federer'), (1, 'Andy Murray');
+insert into rounds ("roundName", "gameId", "playerId", "roundOneScore", "roundTwoScore") values ('federer', 1, 1, 7, 7),('murray', 1, 1, 0, 0);
+insert into leaderboards ("gameId", "winningPlayerId", "loosingPlayerId") values (1, 1, 2);
+
 __END

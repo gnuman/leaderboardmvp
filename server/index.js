@@ -1,17 +1,16 @@
 import express from 'express';
 import bodyParser from 'body-parser';
-import { createAuth } from './controllers/auth/auth';
+import listLeaderBoards from './controllers/leaderboard/leaderboard';
 
 const app = express();
 app.use(bodyParser.json());
 
 app.get('/', (req, res) => {
-  createAuth('anish', 'patil');
+  listLeaderBoards();
   res.send('Hello World!');
 });
 
 app.get('/leaderboards/', (req, res) => {
-  createAuth('anish', 'patil');
   res.send('Hello World!');
 });
 
