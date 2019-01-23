@@ -5,13 +5,10 @@ import listLeaderBoards from './controllers/leaderboard/leaderboard';
 const app = express();
 app.use(bodyParser.json());
 
-app.get('/', (req, res) => {
-  listLeaderBoards();
-  res.send('Hello World!');
-});
 
-app.get('/leaderboards/', (req, res) => {
-  res.send('Hello World!');
+app.get('/leaderboards/', async (req, res) => {
+  const leaderBoards = await listLeaderBoards();
+  res.json(leaderBoards);
 });
 
 app.listen(5000, () => console.log('Example app listening on port 5000!'));
