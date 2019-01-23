@@ -9,15 +9,19 @@ __END
 
 docker exec -i leaderboard_db_1 psql -Uleaderboard_role leaderboard -a <<__END
 
-drop table if exists Leaderboards;
-drop table if exists Games;
-drop table if exists Players;
-drop table if exists Users;
+drop table subscribers;
+drop table rounds;
+drop table if exists leaderboards;
 drop table if exists loginsessions;
-drop table if exists Subscribers;
-drop table if exists Competitions;
-drop table if exists Rounds;
+drop table if exists users;
+drop table if exists subscribers;
 drop table if exists auths;
+drop table if exists players;
+drop table if exists games;
+drop table if exists competitions;
+drop table if exists rounds;
+
+
 
 CREATE TABLE auths (
     id serial primary key,
