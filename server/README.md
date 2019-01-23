@@ -1,5 +1,4 @@
-# node-babel-server-boilerplate
-Boilerplate for express server, es6, with eslint and prettier
+# Server for leaderboard mvp
 
 
 To watch express
