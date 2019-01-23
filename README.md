@@ -1,7 +1,7 @@
 # Leaderboard MVP
 
 
-## architecture
+## Architecture
 
 It' devided into three parts, db layer, server, client.
 
@@ -31,7 +31,7 @@ Things to do:
 
 Error handling of API's , unit tests
 
-### Clinet 
+### Client
 
 I have used https://github.com/faceyspacey/redux-first-router for client, it also uses server side rendering.
 
