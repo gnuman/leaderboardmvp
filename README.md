@@ -3,7 +3,7 @@
 
 ## architecture
 
-It' divived into three parts, db layer, server, client
+It' devided into three parts, db layer, server, client.
 
 ### Database
 
