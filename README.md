@@ -48,9 +48,9 @@ Most of UI have not implemented. But it would be relatively easy to integrate wi
 
 Problem desc has three three things, workable solution, extensible solution (other people can work on it), time frame ( don't loose your sleep).
 
-With limited time that I have, i decided to work on focus on overall Architecture as from my persoanl experience it really hard to change/modify Architecture as it grows(specially front end). 
-
-Then it terms of features, i decided their priority i.e absolutely necessary for MVP and other features are dependant on them.
+With limited time that I have, I have decided to work on focus on overall Architecture as from my personal experience, it's really hard to change/modify Architecture when it grows(specially front end). 
+  
+Then it terms of features, it's based on their priority i.e absolutely necessary for MVP and dependency on other features.
 So anyone who want to pick it up, they can look into my existing code and develop on top of it.
 
 
