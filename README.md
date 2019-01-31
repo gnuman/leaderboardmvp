@@ -20,6 +20,9 @@ It' devided into three parts, db layer, server, client.
   To create initial tables and insert data into it run `./bin/setup-db.sh`
   
   To Login for db run `./bin/psql.sh`
+  
+  If you choose to run docker as root process, run above commands as sudo user
+
 ### Server 
   Go to leaderboardmvp/server
   
@@ -41,10 +44,7 @@ It' devided into three parts, db layer, server, client.
 
 ## Database
 
-
 DB models can be found on https://github.com/gnuman/leaderboardmvp/blob/master/db/bin/setup-db.sh
-
-If you choose to run docker as root process, run above commands as sudo user
 
 ## Server 
 
