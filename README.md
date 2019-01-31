@@ -7,17 +7,23 @@ It' devided into three parts, db layer, server, client.
 
 ### Database
 
-I have used postgressql in docker so that it would be easy to test
+I have used docker for postgres, so that we don't need to install it locally 
 
-To start postgresql,
+Instructions to install docker on Mac
 
-./bin/docker-up.sh
+https://docs.docker.com/docker-for-mac/install/
 
-Once you start it, initialise it 
+Once you install docker, go to leaderboardmvp/db dir
 
-./bin/setup-db.sh
+To start postgres service  `./bin/docker-up.sh`
+
+To create initial tables and insert data into it run `./bin/setup-db.sh`
+
+To Login for db run `./bin/psql.sh`
 
 DB models can be found on https://github.com/gnuman/leaderboardmvp/blob/master/db/bin/setup-db.sh
+
+If you choose to run docker as root process, run above commands as sudo user
 
 ### Server 
 
@@ -31,6 +37,19 @@ Things to do:
 
 Error handling of API's , unit tests
 
+*How to run server*:
+
+Go to leaderboardmvp/server
+
+run yarn
+
+Start `yarn watch ` in one tab
+
+`yarn start` in another 
+
+Server will get started on http://localhost:5000/ 
+
+
 ### Client
 
 I have used https://github.com/faceyspacey/redux-first-router for client, it also uses server side rendering.
@@ -43,6 +62,10 @@ Use eslint rules, integrate it with server.
 
 Most of UI have not implemented. But it would be relatively easy to integrate with server.
 
+*How to run Client*:
+Go to leaderboardmvp/client
+yarn
+yarn start
 
 ### Notes -
 
