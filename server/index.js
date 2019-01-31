@@ -4,7 +4,7 @@ import listLeaderBoards from './controllers/leaderboard/leaderboard';
 
 const app = express();
 app.use(bodyParser.json());
-/* 
+/*
   I have implemented login funtionality but i have not tested it so haven't
   included in app.get
   Idea is to have REST api's like
